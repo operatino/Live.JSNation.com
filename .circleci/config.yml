@@ -76,6 +76,6 @@ jobs:
           name: deploy Storybook
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              CMS_ENDPOINT=$CMS_ENDPOINT/master CMS_TOKEN=$CMS_TOKEN yarn deploy:storybook
+              CMS_ENDPOINT=$CMS_ENDPOINT CMS_TOKEN=$CMS_TOKEN yarn deploy:storybook
             fi
 
