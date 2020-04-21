@@ -36,12 +36,13 @@ jobs:
 
       - run:
           name: build website
+          # Example CMS_ENDPOINT=https://api-euwest.graphcms.com/v1/ck0qr5av409372639206aeqn/master
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              CMS_ENDPOINT=$CMS_ENDPOINT/master CMS_TOKEN=$CMS_TOKEN yarn build
+              CMS_ENDPOINT=$CMS_ENDPOINT CMS_TOKEN=$CMS_TOKEN yarn build
             fi
             if [ $CIRCLE_BRANCH != "master" ]; then
-              CMS_ENDPOINT=$CMS_ENDPOINT/master CMS_TOKEN=$CMS_TOKEN_DEV yarn build
+              CMS_ENDPOINT=$CMS_ENDPOINT CMS_TOKEN=$CMS_TOKEN_DEV yarn build
             fi
 
       # - run:
