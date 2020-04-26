@@ -1,6 +1,7 @@
 .event
 	position: relative
 	padding: 128px 0 40px
+	background: $themeColor2
 	+laptop
 		padding: 80px 0 40px
 	+tablet
@@ -8,7 +9,7 @@
 	+md
 		padding: 103px 0
 	+sm
-		padding: 40px 0
+		padding: 50px 0
 	&__heading
 		+r(1440)
 			font-size: 22px
@@ -21,7 +22,15 @@
 	&__tip
 		font-size: 18px
 		text-align: center
-		margin: 82px 0 40px
+		margin: 72px 0 56px
+
+		a
+			color: #fff
+
+		+md
+			margin: 52px 0 36px
+		+sm
+			margin: 32px 0 26px
 	&__suptitle
 		text-align: center
 		font-size: 33px
@@ -46,26 +55,33 @@
 			margin-bottom: 25px
 			max-width: 100%
 	&__title
-		margin: 14px auto 42px
-		//+r(1440)
-			font-size: 48px
+		font-size: 92px
+		color: #fff
+		font-weight: 700
+		line-height: 1.06
+		text-align: center
+		margin: 5px auto 56px
+		+r(1360)
+			font-size: 6.7vw
 		+tablet
 			margin-bottom: 51px
 		+md
 			margin-bottom: 40px
 		+sm
+			font-size: 6vw
 			letter-spacing: 0
 			margin: 0 0 27px
 		+xs
+			font-size: 32px
 			letter-spacing: 3.2px
 
 
 	&__text
 		font-size: 18px
-		max-width: 880px
+		max-width: 1040px
 		padding: 0 20px
-		line-height: 1.6
-		letter-spacing: -0.001em
+		line-height: 1.9
+		letter-spacing: -.001em
 		text-align: center
 
 		p
@@ -110,6 +126,37 @@
 			justify-content: center
 			align-items: flex-start
 			width: 100%
+
+	&__techs-title
+		font-size: 26px
+		margin: 82px auto 52px
+		text-align: center
+
+		+sm
+			font-size: 22px
+			margin: 62px auto 32px
+
+		+xs
+			font-size: 18px
+			margin: 52px auto 22px
+
+	.techs
+		margin: 32px auto
+		justify-content: center
+
+		&__item
+			min-width: 100px
+
+			+tablet
+				min-width: auto
+				width: 80px
+			+sm
+				width: 20%
+			+xs
+				width: 20%
+			+xxs
+				width: 25%
+
 
 .e-item
 	flex: 1 1 auto

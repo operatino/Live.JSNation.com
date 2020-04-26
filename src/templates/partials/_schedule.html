@@ -1,7 +1,7 @@
 <section class="section schedule" id="schedule">
   {% if(schedule.length == 1) %}
     <div class="container talks-list">
-      <h3 class="section__title">{{ scheduleTitle }}</h3>
+      <h3 class="section__title">{{ mixins.text(pieceOfTexts, 'schedule__title') }}</h3>
       {% for talk in schedule[0].list %}
       <div class="talk__item" id="talk-{{talk.slug}}">
           <div class="s-item graphcms-container" {{ mixins.cmsData(talk) }}>
