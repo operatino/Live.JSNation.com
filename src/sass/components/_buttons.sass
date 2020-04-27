@@ -1,8 +1,8 @@
 .btn
 	display: flex
 	text-align: center
-	background-color: #9dde00
-	padding: 15px 20px
+	background-color: $themeColor
+	padding: 26px 30px
 	align-items: center
 	justify-content: center
 	text-transform: uppercase
@@ -21,7 +21,10 @@
 	//-webkit-transform-style: preserve-3d
 
 	+tablet
-		padding: 15px 20px
+		padding: 26px 20px
+
+	&:hover
+		// background-color: #f3ed47
 
 	&--gradient
 		border: 2px solid transparent
@@ -36,7 +39,7 @@
 			bottom: 0
 			right: 0
 			z-index: -2
-			background: linear-gradient(145deg, #9dde00, #ccff00)
+			background: linear-gradient(145deg, #fef502, #fef502)
 			animation: AnimationName 5s linear infinite
 
 		&:before
@@ -48,7 +51,7 @@
 			bottom: 0
 			right: 0
 			z-index: -1
-			background: linear-gradient(145deg, #ccff00, #9dde00)
+			background: linear-gradient(145deg, #fef502, #fef502)
 			animation: AnimationName 5s linear infinite
 
 		&:hover
@@ -70,7 +73,7 @@
 			bottom: 0
 			right: 0
 			z-index: -2
-			background: linear-gradient(145deg, #ccff00, #9dde00)
+			background: linear-gradient(145deg, #fef502, #fef502)
 			animation: AnimationName 5s linear infinite
 
 		&:before
