@@ -1,6 +1,6 @@
 <div class="hero">
 	<div class="hero__bg"></div>
-	{# <div class="hero__timer" id="countdown">23:16:54:07</div> #}
+	<div class="hero__timer" id="countdown">23:16:54:07</div>
 
 	<div class="screens-wrap">
 		<picture class="screens-wrap__ratio">
@@ -15,8 +15,8 @@
 						<use xlink:href="img/sprite.svg#icon-{{ screen.iconFace }}"></use>
 					</svg>
 				</div>
-				{% if screen.speakerIndex %}
-				<img class="screens__img" src="{{speakers[pageKey][screen.speakerIndex].avatar}}">
+				{% if screen.speakerHandle %}
+				<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:720,width:720/{{ screen.speakerHandle }}">
 				{% endif %}
 			</div>
 			{% endfor %}
@@ -25,41 +25,28 @@
 
 	<div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
 		<div class="hero__logo">
-			<a href="/" class="logo"><img src="img/logo-summit-online.svg" alt="React Summit Online"></a>
+			<a href="/" class="logo"><img src="img/logo-jsnl.svg" alt="JSNation Live"></a>
 		</div>
 		<div class="hero__suptitle">{{ pagesPieceOfTexts.hero__date }}</div>
 		<h1 class="hero__title">{{ pagesPieceOfTexts.hero__title | safe }}</h1>
+
 		<div class="hero__info">
 			<ul class="h-list">
+				{% for stat in pages.main.pageStatistics.eventStats %}
 				<li class="h-list__item">
-					<div class="h-list__value">{{ pages.main.pageStatistics.tracks }}</div>
+					<div class="h-list__value">{{ stat.statNumber }}</div>
 					<div class="h-list__text">
-						<span class="h-list__text-top">Tracks</span>
+						<span class="h-list__text-top">{{ stat.statName }}</span>
 						<br>
-						{{ pages.main.pageStatistics.tracksTitle }}
+						{{ stat.statDescr }}
 					</div>
 				</li>
-				<li class="h-list__item">
-					<div class="h-list__value">{{ pages.main.pageStatistics.speakers }}</div>
-					<div class="h-list__text">
-						<span class="h-list__text-top">Speakers</span>
-						<br>
-						{{ pages.main.pageStatistics.speakersTitle }}
-					</div>
-				</li>
-
-				<li class="h-list__item">
-					<div class="h-list__value">{{mixins.icon('infinity')}}</div>
-					<div class="h-list__text">
-						<span class="h-list__text-top">React devs</span>
-						<br>
-						{{ pages.main.pageStatistics.visitorsTitle }}
-					</div>
-				</li>
+				{% endfor %}
 			</ul>
 		</div>
+
 		<div class="hero__btn">
-			<a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn btn--gradient" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
+			<a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
 
 			{% if pages.main.pageStatistics.heroOptIn %}
 			<a href="{{ pages.main.pageStatistics.heroOptIn.link }}" class="btn btn--border">{{ pages.main.pageStatistics.heroOptIn.text }}</a>
@@ -69,7 +56,7 @@
 			In collaboration with
 			<div class="hero__partners">
 				<a href="https://focusreactive.com/" class="hero__partner-img" target="_blank"><img src="img/sponsors/fr-text.png" alt="FocusReactive" /></a>
-				<a href="https://nx.dev/react" class="hero__partner-img" target="_blank"><img src="img/sponsors/nx.png" alt="Nrwl" /></a>
+				<!-- <a href="https://nx.dev/react" class="hero__partner-img" target="_blank"><img src="img/sponsors/nx.png" alt="Nrwl" /></a> -->
 			</div>
 		</div>
 	</div>

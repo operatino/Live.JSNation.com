@@ -42,8 +42,8 @@ fancypop();
 
 highlightContent({ contentTypeMap });
 
-window.selectGeneralTrack = () => document.querySelector('a.schedule__tab-link[data-tab="1"]').click();
-window.selectNativeTrack = () => document.querySelector('a.schedule__tab-link[data-tab="2"]').click();
+window.selectGeneralTrack = () => document.querySelector('.schedule__tab-link[data-tab="1"]').click();
+window.selectNativeTrack = () => document.querySelector('.schedule__tab-link[data-tab="2"]').click();
 
 if (location.hash === '#alt-track') {
   try {
