@@ -8,7 +8,6 @@ Clone this repo and then in command line type:
 * `gulp` - run dev-server and let magic happen, or
 * `gulp build` - build project from sources
 
-
 --
 
 ## List of Gulp tasks
